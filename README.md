@@ -1,4 +1,7 @@
-# DocuPy - https://github.com/FEDavid/DocuPy
+# DocuPy
+
+Link to repository - https://github.com/FEDavid/DocuPy
+
 A script that uses pydoc and path modules to loop through any subdirectories within the root and output the documentation for those .py files.
 
 ## What does it look like
