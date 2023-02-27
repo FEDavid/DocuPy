@@ -5,20 +5,23 @@ import dominate
 from dominate.tags import *
 
 mainpath = os.getcwd()
+destinationpath = 'documentation/'
 count = 0
+github_repo = "https://github.com/FEDavid/DocuPy"
+file_list = {}
 
 def pydoc_output():
     global count
     try:
-        os.chdir('documentation')
+        os.chdir(destinationpath)
         for old_files in os.listdir("."):
             if old_files.endswith(".html"):
                 os.remove(old_files)
     except:
-        print("No documentation folder found, please run this file from the root folder.")
-        exit(-1)
+        print("No documentation folder found, creating..")
+        os.mkdir("documentation")
     paths = []
-    os.chdir("..")
+    os.chdir(mainpath)
     
     for root, dirs, files in os.walk(".", topdown=False):
         for file in files:
@@ -37,7 +40,7 @@ def pydoc_output():
         subprocess.run(["python3","-m","pydoc","-w",".\\"])
 
 def pydoc_move():
-    destinationpath = 'documentation/'  
+      
     os.chdir(mainpath)
     for root, dirs, files in os.walk(".", topdown=False):
         for file in files:
@@ -50,20 +53,18 @@ def pydoc_move():
                     exit(-1)
     print("\nFiles documented - ",count,sep="")
 
-def pydoc_test():
-    file_list = {}
-    
-    os.chdir('documentation')
+def pydoc_HTML():
+    os.chdir(destinationpath)
     for html_file in os.listdir("."):
         if html_file.endswith(".html"):
-            html_file_new = "https://htmlpreview.github.io/?https://raw.githubusercontent.com/WBL2-Football-Project/football/main/documentation/"+html_file
+            html_file_new = github_repo+html_file
             file_list.update({html_file: html_file_new})
 
-    html_code = dominate.document(title='WBL2-Football-Project/football documentation')  
+    html_code = dominate.document(title='DocuPy')  
 
     with html_code:
         with div(id='Title'):
-            h1("WBL2-Football-Project/football documentation")
+            h1("DocuPy")
 
         with div(id='Documentation'):
             html_file_list = ul()
@@ -80,4 +81,7 @@ def pydoc_test():
 if __name__ == "__main__":
     pydoc_output()
     pydoc_move()
-    pydoc_test()
+    pydoc_HTML()
+    # Debugging
+    # os.chdir(mainpath)
+    # shutil.rmtree(destinationpath)
