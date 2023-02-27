@@ -58,6 +58,7 @@ def pydoc_HTML():
     for html_file in os.listdir("."):
         if html_file.endswith(".html"):
             html_file_new = github_repo+html_file
+            print(html_file_new)
             file_list.update({html_file: html_file_new})
 
     html_code = dominate.document(title='DocuPy')  
