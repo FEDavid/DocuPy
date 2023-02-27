@@ -1,6 +1,11 @@
 # DocuPy
 A script that uses pydoc and path modules to loop through any subdirectories within the root and output the documentation for those .py files.
 
+## What does it look like
+* Eventually, you will end up with a series of files in a documentation folder like this, which when combined with a link to your index.html file - [LINK](https://htmlpreview.github.io/) - will give you a shareable and simple copy of all your documentation.
+
+IMAGE
+
 ## How does it work
 * Through a usage of several modules (subprocess, os, shutil, and dominate) this script will loop through all subdirectories linked to the root folder (including itself) and will locate any python files. 
 
