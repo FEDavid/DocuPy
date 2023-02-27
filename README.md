@@ -24,3 +24,15 @@ d-----        27/02/2023     20:00                __pycache__
 * Once all the files have been output, due to the way pydoc works, all the documentated files will be within their respective directories which is not very organised. As such, the script then does a similar loop through all the directories, instead looking for .html files, and then moves all of these to the documentation folder (Which if doesn't exist when the script is launched, is created)
 
 * Finally, the script will generate some very basic .html into an index file which will link relative to all other documentated html files. Using this in combination with https://htmlpreview.github.io/ - You can create a link in your README to the RAW link of your index file while including the htmlpreview site beforehand to render the index file and all other documents!
+
+## Setup
+
+1. Download the source file and place it in your root folder, assuring all files requiring documentation are either in the root file with it or in a subdirectory.
+
+2. {Only if you're using the documentation for GitHub, otherwise you can remove the `pydoc_HTML()` function} 
+Edit the `github_repo` variable within the source file to match your username and repo name.
+
+3. {Only if you're using the documentation for GitHub} 
+Once the files are outputted, commit them to your repo and take the url for your raw index and slot it into your README markdown while adding the htmlpreview prefix.
+
+* If you are not intending on using this for Github, as stated above, simply remove the `pydoc_HTML()' function and the files will simply all be output to your documentation folder locally.
