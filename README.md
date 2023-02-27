@@ -4,7 +4,17 @@ A script that uses pydoc and path modules to loop through any subdirectories wit
 ## What does it look like
 * Eventually, you will end up with a series of files in a documentation folder like this, which when combined with a link to your index.html file - [LINK](https://htmlpreview.github.io/) - will give you a shareable and simple copy of all your documentation.
 
-IMAGE
+```
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        27/02/2023     20:00                documentation
+d-----        27/02/2023     20:23                project_docs
+d-----        27/02/2023     20:00                __pycache__
+-a----        27/02/2023     19:34           1928 .gitignore
+-a----        27/02/2023     19:34           1083 LICENSE
+-a----        27/02/2023     20:08           2657 main.py
+-a----        27/02/2023     19:34            153 README.md
+```
 
 ## How does it work
 * Through a usage of several modules (subprocess, os, shutil, and dominate) this script will loop through all subdirectories linked to the root folder (including itself) and will locate any python files. 
