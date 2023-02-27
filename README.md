@@ -33,10 +33,12 @@ d-----        27/02/2023     20:00                __pycache__
 
 1. Download the source file and place it in your root folder, assuring all files requiring documentation are either in the root file with it or in a subdirectory.
 
-2. {Only if you're using the documentation for GitHub, otherwise you can remove the `pydoc_HTML()` function} 
+2. Insert some documentation into your code (I used [pydoc](https://docs.python.org/3/library/pydoc.html)).
+
+3. {Only if you're using the documentation for GitHub, otherwise you can remove the `pydoc_HTML()` function} 
 Edit the `github_repo` variable within the source file to match your username and repo name.
 
-3. {Only if you're using the documentation for GitHub} 
+4. {Only if you're using the documentation for GitHub} 
 Once the files are outputted, commit them to your repo and take the url for your raw index and slot it into your README markdown while adding the htmlpreview prefix.
 
 * If you are not intending on using this for Github, as stated above, simply remove the `pydoc_HTML()' function and the files will simply all be output to your documentation folder locally.
