@@ -7,7 +7,7 @@ from dominate.tags import *
 mainpath = os.getcwd()
 destinationpath = 'documentation/'
 count = 0
-github_repo = "https://github.com/FEDavid/DocuPy"
+github_repo = "https://raw.githubusercontent.com/FEDavid/DocuPy/main/documentation/"
 file_list = {}
 
 def pydoc_output():
